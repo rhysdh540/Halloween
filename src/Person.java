@@ -1,13 +1,13 @@
 import java.util.ArrayList;
-import java.util.Random;
+
 public class Person {
     private final String name;
     private final String costume;
     private int candyCount;
     private ArrayList<House> housesVisited = new ArrayList<>();
     private int numTricksPerformed = 0;
-    private final Candy favoriteCandy = Candy.getRandomCandy();
-    private House gotFavoriteCandy;
+    private final TrickOrTreat.Candy favoriteCandy = TrickOrTreat.Candy.getRandomCandy();
+    private House gotFavoriteCandy; // the house they got their favorite candy from (null if they didn't get it)
     private House trickPlayedOn;
 
     public Person(String name, String costume) {
@@ -64,25 +64,9 @@ public class Person {
         if(numTricksPerformed == 0) // shouldn't happen since we took care of that in the main method
             System.out.print(" \033[91mThey didn't play any tricks.\033[0m");
         else
-            System.out.print(" \033[92mThey played the trick of \033[96;1m" + randomTrick() + " \033[92m" + numTricksPerformed + "\033[0;92m time" + (numTricksPerformed == 1 ? "" : "s") + ", once at \033[96;1m" + trickPlayedOn.getAddress() + "\033[0;92m. ");
+            System.out.print(" \033[92mThey played the trick of \033[96;1m" + TrickOrTreat.randomTrick() + " \033[92m" + numTricksPerformed + "\033[0;92m time" + (numTricksPerformed == 1 ? "" : "s") + ", once at \033[96;1m" + trickPlayedOn.getAddress() + "\033[0;92m. ");
 
-        System.out.println("\033[0mThey arrived to their home at \033[96;1m" + House.makeRandomAddress() + "\033[0m by \033[96;1m" + arriveTime() + "\033[0m.\n");
+        System.out.println("\033[0mThey arrived to their home at \033[96;1m" + House.makeRandomAddress() + "\033[0m by \033[96;1m" + TrickOrTreat.arriveTime() + "\033[0m.\n");
     }
 
-    /**
-     * returns a random trick to play
-     * @return a random trick
-     */
-    public String randomTrick(){
-        return new String[]{"telling people that the house was haunted", "placing glowing eyes in a bush", "covering a wall in Silly String", "ringing the doorbell and running away", "dropping a fake snake through the mail hole"}[new Random().nextInt(0, 5)];
-    }
-
-    /**
-     * generates a random time, rounded to 15 minutes, between 6:00 and 11:45
-     * @return a random time
-     */
-    public String arriveTime(){
-        return new Random().nextInt(6, 12) + ":" +
-                new int[]{0, 15, 30, 45}[new Random().nextInt(0, 4)];
-    }
 }

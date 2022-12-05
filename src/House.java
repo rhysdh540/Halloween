@@ -7,7 +7,7 @@ public class House {
     private final int candyCount;
     private ArrayList<Person> peopleVisited = new ArrayList<>();
     private int tricksPlayed = 0;
-    private final Candy candyGiven = Candy.getRandomCandy();
+    private final TrickOrTreat.Candy candyGiven = TrickOrTreat.Candy.getRandomCandy();
     private int candyGivenOut = 0;
 
     public House(String address, boolean isDecorated) {
@@ -20,7 +20,7 @@ public class House {
     public boolean isDecorated() { return isDecorated; }
     public String getAddress() { return address; }
     public int giveOutCandy() { return candyCount; }
-    public Candy candyGiven() { return candyGiven; }
+    public TrickOrTreat.Candy candyGiven() { return candyGiven; }
     public int getTricksPlayed() { return tricksPlayed; }
     public void playTrick() { tricksPlayed++; }
     public int numPeopleVisited() { return peopleVisited.size(); }
