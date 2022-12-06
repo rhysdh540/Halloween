@@ -5,7 +5,7 @@ public class House {
     private final String address;
     private final boolean isDecorated;
     private final int candyCount; // how much candy the house gives out to each person who visits
-    private ArrayList<Person> peopleVisited = new ArrayList<>(); // a list of people who visited this house
+    private ArrayList<Person> peopleVisited = new ArrayList<>(); // a list of people who visited this house INTELLIJ THIS IS NOT FINAL AHHHHHH
     private int tricksPlayed = 0; // how many tricks were played on this house
     private final TrickOrTreat.Candy candyGiven = TrickOrTreat.Candy.getRandomCandy(); // the type of candy given out by this house
     private int candyGivenOut = 0; // total amount of candy given out by this house
@@ -31,7 +31,7 @@ public class House {
      * @return a random address
      */
     public static String makeRandomAddress(){                                                                                                                                                                                                                                                 //haha breaking bad reference
-        final String[] names = {"Murphy", "Ford", "Ethels", "Essex", "Williams Mine", "Lords", "Moonlight", "West Side", "Brackley", "Berkshire", "Massachusets", "Perry", "Southern", "Caldwell", "Pratt", "Gregory", "Echo", "Bible", "Valley", "Round Table", "McDowell", "Jesse", "Brown", "Yellow", "Walter", "White"};
+        final String[] names = {"Murphy", "Ford", "Ethels", "Essex", "Williams Mine", "Lords", "Moonlight", "West Side", "Brackley", "Berkshire", "Massachusets", "Perry", "Southern", "Caldwell", "Pratt", "Gregory", "Echo", "Bible", "Valley", "Round Table", "McDowell", "Jesse", "Brown", "Yellow", "Walter", "White", "Beech", "Floral"};
         final String[] streets = {"Court", "Street", "Lane", "Way", "Drive", "Avenue", "Road", "Circle", "Boulevard", "Alley", "Park"};
         return new Random().nextInt(1, 10000) + " " + names[new Random().nextInt(0, names.length)] + " " + streets[new Random().nextInt(0, streets.length)];
     }
@@ -43,7 +43,7 @@ public class House {
      */
     public void printOverview() {
         if(isDecorated)
-            System.out.println(address + " was visited by " + peopleVisited.size() + " people and gave out " + candyGivenOut + " pieces of candy. " + "No tricks were played on this house because it was decorated.");
+            System.out.println(address + " was visited by " + peopleVisited.size() + " people and gave out " + candyGivenOut + " pieces of candy. No tricks were played on this house because it was decorated.");
         else
             System.out.println(address + " was visited by " + peopleVisited.size() + " people and gave out no candy. " + tricksPlayed + " tricks were played on this house because it was not decorated.");
     }

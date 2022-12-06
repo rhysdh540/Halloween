@@ -55,7 +55,7 @@ public class Person {
      * </pre>
      */
     public void printOverview(){
-        System.out.print("\033[2J\033[H\033[96;1m" + name + "\033[0m, dressed as a \033[96;1m" + costume + "\033[0m, visited \033[96;1m" + housesVisited.size() + "\033[0m houses and got \033[96;1m" + candyCount + "\033[0m pieces of candy. ");
+        System.out.print("\033[2J\033[H\033[96;1m" + name + "\033[0m, dressed as \033[96;1m" + costume + "\033[0m, visited \033[96;1m" + housesVisited.size() + "\033[0m houses and got \033[96;1m" + candyCount + "\033[0m pieces of candy. ");
         if(gotFavoriteCandy != null)
             System.out.print("\033[92mThey got their favorite candy, \033[96;1m" + favoriteCandy + "\033[0;92m, at \033[96;1m" + gotFavoriteCandy.getAddress() + "\033[0;92m.");
         else

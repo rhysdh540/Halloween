@@ -38,7 +38,7 @@ public class TrickOrTreat {
      * @return a random trick
      */
     public static String randomTrick(){
-        return new String[]{"telling people that the house was haunted", "placing glowing eyes in a bush", "covering a wall in Silly String", "ringing the doorbell and running away", "dropping a fake snake through the mail hole"}[new Random().nextInt(0, 5)];
+        return new String[]{"telling people that the house was haunted", "placing glowing eyes in a bush", "covering a wall in Silly String", "ringing the doorbell and running away", "dropping a fake snake through the mail slot"}[new Random().nextInt(0, 5)];
     }
 
     /**
@@ -47,6 +47,10 @@ public class TrickOrTreat {
      */
     public static String arriveTime(){
         return new Random().nextInt(6, 12) + ":" +
-                new int[]{0, 15, 30, 45}[new Random().nextInt(0, 4)];
+                new String[]{"00", "15", "30", "45"}[new Random().nextInt(0, 4)];
+    }
+    public static String randomCostume(){
+        String[] costumes = {"a pirate", "a witch", "a ghost", "a vampire", "a zombie", "a werewolf", "a mummy", "a clown", "a superhero", "a princess", "a cowboy", "a ninja", "a robot", "an astronaut", "a police officer", "a firefighter", "a doctor", "a nurse", "a chef", "a construction worker", "a farmer", "a pilot", "a horse", "a sheep", "a goat", "an elephant", "a lion", "a tiger", "a bear", "a monkey", "a giraffe", "a zebra", "a hippo", "Davis Clarke", "an iPhone 14 Pro Max", "Walter White", "Duke, the Java mascot", "a dude in a Norway sweater", "Connor Rusch", "an electron", "Dark Father", "Copper (II) Acetate (aq)", "Mr. And Mrs. Thomas M. Cole", "a sussy baka"};
+        return costumes[new Random().nextInt(0, costumes.length)];
     }
 }
