@@ -4,19 +4,19 @@ import java.util.Random; // easier for ranges than using Math.random()
 public class House {
     private final String address;
     private final boolean isDecorated;
-    private final int candyCount;
-    private ArrayList<Person> peopleVisited = new ArrayList<>();
-    private int tricksPlayed = 0;
-    private final TrickOrTreat.Candy candyGiven = TrickOrTreat.Candy.getRandomCandy();
-    private int candyGivenOut = 0;
+    private final int candyCount; // how much candy the house gives out to each person who visits
+    private ArrayList<Person> peopleVisited = new ArrayList<>(); // a list of people who visited this house
+    private int tricksPlayed = 0; // how many tricks were played on this house
+    private final TrickOrTreat.Candy candyGiven = TrickOrTreat.Candy.getRandomCandy(); // the type of candy given out by this house
+    private int candyGivenOut = 0; // total amount of candy given out by this house
 
     public House(String address, boolean isDecorated) {
         this.address = address;
         this.isDecorated = isDecorated;
-        this.candyCount = isDecorated ? new Random().nextInt(1, 10) : 0; // house gives out no candy if not decorated, else a random number between 1 and 10
+        this.candyCount = isDecorated ? new Random().nextInt(1, 11) : 0; // house gives out no candy if not decorated, else a random number between 1 and 10
     }
 
-    /* getters and setters*/
+    /* getters and setters */
     public boolean isDecorated() { return isDecorated; }
     public String getAddress() { return address; }
     public int giveOutCandy() { return candyCount; }

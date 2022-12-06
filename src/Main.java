@@ -18,14 +18,18 @@ public class Main {
         };
 
         /* simulate trick or treating */
+        int totalHousesVisited = 0, totalDecoratedHouses = 0;
         for(Person person : people) {
-            for(int i : new int[new Random().nextInt(10, 16)]) // trick or treats 10-15 times
-                person.trickOrTreat(houses[new Random().nextInt(0, houses.length)]);
-
-            while(person.getTrickPlayedOn() == null) // if they didn't play a trick, keep trying until they do
-                person.trickOrTreat(houses[new Random().nextInt(0, houses.length)]);
-
+            for(int i : new int[new Random().nextInt(10, 16)]) { // trick or treats 10-15 times
+                totalDecoratedHouses += person.trickOrTreat(houses[new Random().nextInt(0, houses.length)]) ? 1 : 0;
+                totalHousesVisited++;
+            }
+            while(person.getTrickPlayedOn() == null) {// if they didn't play a trick, keep trying until they do
+                totalDecoratedHouses += person.trickOrTreat(houses[new Random().nextInt(0, houses.length)]) ? 1 : 0;
+                totalHousesVisited++;
+            }
             person.printOverview();
         }
+        System.out.println("Tonight, \033[96;1m" + totalHousesVisited + "\033[0m houses were visited, and \033[96;1m" + totalDecoratedHouses + "\033[0m of them were decorated.");
     }
 }

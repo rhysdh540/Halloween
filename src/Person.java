@@ -64,7 +64,7 @@ public class Person {
         if(numTricksPerformed == 0) // shouldn't happen since we took care of that in the main method
             System.out.print(" \033[91mThey didn't play any tricks.\033[0m");
         else
-            System.out.print(" \033[92mThey played the trick of \033[96;1m" + TrickOrTreat.randomTrick() + " \033[92m" + numTricksPerformed + "\033[0;92m time" + (numTricksPerformed == 1 ? "" : "s") + ", once at \033[96;1m" + trickPlayedOn.getAddress() + "\033[0;92m. ");
+            System.out.print(" \033[92mThey played the trick of \033[91;1m" + TrickOrTreat.randomTrick() + " \033[96m" + numTricksPerformed + "\033[0;92m time" + (numTricksPerformed == 1 ? "" : "s") + ", once at \033[96;1m" + trickPlayedOn.getAddress() + "\033[0;92m. ");
 
         System.out.println("\033[0mThey arrived to their home at \033[96;1m" + House.makeRandomAddress() + "\033[0m by \033[96;1m" + TrickOrTreat.arriveTime() + "\033[0m.\n");
     }
