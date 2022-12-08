@@ -38,7 +38,8 @@ public class TrickOrTreat {
      * @return a random trick
      */
     public static String randomTrick(){
-        return new String[]{"telling people that the house was haunted", "placing glowing eyes in a bush", "covering a wall in Silly String", "ringing the doorbell and running away", "dropping a fake snake through the mail slot"}[new Random().nextInt(0, 5)];
+        String[] tricks = {"telling people that the house was haunted", "placing glowing eyes in a bush", "covering a wall in Silly String", "ringing the doorbell and running away", "dropping a fake snake through the mail slot"};
+        return tricks[new Random().nextInt(0, tricks.length)];
     }
 
     /**
