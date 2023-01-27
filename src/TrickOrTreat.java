@@ -11,12 +11,14 @@ public class TrickOrTreat {
         CANDY_CANES,
         SMARTIES,
         JOLLY_RANCHERS,
-        GUMMY_WORMS;
+        GUMMY_WORMS,
+        CANDY_APPLES;
+
 
         /**
-         * gets a random candy from the enum
+         * Returns a random candy from the enum
          *
-         * @return a random candy
+         * @return a random candy from the enum
          */
         static Candy getRandomCandy() {
             return values()[new Random().nextInt(values().length)];

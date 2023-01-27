@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 import java.util.Random; // easier for ranges than using Math.random()
 
+@SuppressWarnings("unused")
 public class House {
     private final String address;
     private final boolean isDecorated;
     private final int candyCount; // how much candy the house gives out to each person who visits
-    private ArrayList<Person> peopleVisited = new ArrayList<>(); // a list of people who visited this house INTELLIJ THIS IS NOT FINAL AHHHHHH
+    @SuppressWarnings("FieldMayBeFinal") private ArrayList<Person> peopleVisited = new ArrayList<>(); // a list of people who visited this house
     private int tricksPlayed = 0; // how many tricks were played on this house
     private final TrickOrTreat.Candy candyGiven = TrickOrTreat.Candy.getRandomCandy(); // the type of candy given out by this house
     private int candyGivenOut = 0; // total amount of candy given out by this house
